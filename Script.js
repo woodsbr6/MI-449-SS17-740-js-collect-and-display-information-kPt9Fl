@@ -11,14 +11,15 @@ var updatepreview = function () {
   var discription = discriptionInput.value
   var email = emailInput.value
   var phone = phoneInput.value
-  var AllInfo =
-    '<h1> Hi, my name is <strong>' + firstName + '</strong> </h1>' +
-    '<strong>' + lastName + '!</strong> <strong>' + discription + '!</strong>' +
-    'If you\'re interested in a date, you can email me at <strong>' + email +
-    '</strong> or give me a call at <strong>' + phone + '</strong>'
-  previewParagraph.innerHTML = AllInfo
+  var allInfo =
+    '<h1> Hi, my name is <strong>' + firstName + lastName + '!</strong> </h1>' +
+    '<strong>' + discription + '</strong>' +
+    'If you\'re interested in a date, you can email me at <a href="mailto:' + email + '"> <strong>' + email +
+    '</strong></a> or give me a call at <a href="tel:' + phone + '"> <strong>' + phone +
+    '</strong></a>'
+  previewParagraph.innerHTML = allInfo
   var paragraph = document.getElementById('my-paragraph')
-  paragraph.textContent = AllInfo
+  paragraph.textContent = allInfo
 }
 
 firstNameInput.addEventListener('input', updatepreview)
